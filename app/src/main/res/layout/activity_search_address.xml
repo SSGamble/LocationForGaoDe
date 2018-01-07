@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_centerHorizontal="true"
+            android:layout_width="200dp"
+            android:hint="请输入地点"
+            android:id="@+id/et_search"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="搜索"
+            android:layout_alignBaseline="@+id/et_search"
+            android:layout_alignBottom="@+id/et_search"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <com.qr.locationdemo.AutoListView
+        android:layout_width="match_parent"
+        android:id="@+id/lv_list"
+        android:visibility="visible"
+        android:cacheColorHint="#00000000"
+        android:listSelector="#00000000"
+        android:layout_height="match_parent">
+    </com.qr.locationdemo.AutoListView>
+
+    <TextView
+        android:text="未能查找到相关地点"
+        android:layout_marginTop="30dp"
+        android:id="@+id/tv_no_data"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:id="@+id/ll_loading"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <ProgressBar
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:text="正在查找..."
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>
